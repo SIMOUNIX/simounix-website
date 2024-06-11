@@ -1,0 +1,14 @@
+.main-nav {
+    display: flex;
+    /* vertical nav */
+    flex-direction: column;
+}
+
+.nav-element {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.nav-element:hover {
+    color: var(--accent);
+}
