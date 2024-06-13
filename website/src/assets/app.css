@@ -1,7 +1,22 @@
+header {
+    height: 3rem;
+}
+
+.wrapper-nav {
+    height: 100%;
+}
+
+.wrapper-content {
+    height: calc(100% - 3rem);
+}
+
 .main-nav {
+    height: 100%;
     display: flex;
-    /* vertical nav */
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
 }
 
 .nav-element {
@@ -11,4 +26,21 @@
 
 .nav-element:hover {
     color: var(--accent);
+}
+
+.router-link-active {
+    color: var(--accent);
+}
+
+.home-route {
+    margin-right: auto;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* small screen phone or vertical tablet change to column */
+@media (max-width: 768px) {
+    .to-hide {
+        display: none;
+    }
 }
