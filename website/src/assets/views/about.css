@@ -27,7 +27,7 @@ p {
 }
 
 .about-text a {
-    color: var(--secondary);
+    color: var(--accent);
     text-decoration: none;
     display: inline;
 }
@@ -45,9 +45,26 @@ p {
     width: 90%;
 }
 
+@media (prefers-color-scheme: dark) {
+    .about-image {
+        -webkit-filter: invert(100%); /* Safari/Chrome */
+        filter: invert(100%);
+
+    }
+}
+
 /* small screen phone or vertical tablet change to column */
 @media (max-width: 768px) {
     .about {
         flex-direction: column;
+    }
+
+    .about-text {
+        width: 100%;
+    }
+
+    .about-image {
+        width: 60%;
+        margin: auto;
     }
 }

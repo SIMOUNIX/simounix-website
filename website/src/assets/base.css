@@ -1,12 +1,22 @@
 @import url('https://fonts.cdnfonts.com/css/elegant-typewriter');
-                
-
-:root {
-  --text: #151619;
-  --background: #eeeff2;
-  --primary: #374558;
-  --secondary: #8da4c3;
-  --accent: #406496;
+              
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: #0d0d0d;
+    --background: #f7f8f8;
+    --primary: #78a19d;
+    --secondary: #a6c9c6;
+    --accent: #86c1bc;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #f2f2f2;
+    --background: #070808;
+    --primary: #5e8783;
+    --secondary: #365956;
+    --accent: #3e7974;
+  }
 }
 
 *,
