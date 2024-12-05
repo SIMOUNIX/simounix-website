@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/HomeView.vue'),
+      component: () => import('../views/HomeView.vue')
     },
     {
       path: '/recipes',
@@ -38,7 +38,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/:catchAll(.*)', // This is the catch-all route
+      path: '/:catchAll(.*)', // catch all and redirect to home
       redirect: '/'
     }
   ]

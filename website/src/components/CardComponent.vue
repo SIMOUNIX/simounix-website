@@ -2,6 +2,4 @@
 defineProps(['title', 'description', 'image', 'link', 'linkText'])
 </script>
 
-<template>
-    
-</template>
+<template></template>

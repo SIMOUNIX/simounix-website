@@ -1,3 +1,1 @@
-<template>
-    work in progress...
-</template>
+<template>work in progress...</template>

@@ -1,16 +1,16 @@
 <script setup>
-import { ref } from 'vue';
-import { RouterLink, RouterView, useRouter } from 'vue-router';
+import { ref } from 'vue'
+import { RouterLink, RouterView, useRouter } from 'vue-router'
 
-const toggleMenu = ref(false);
+const toggleMenu = ref(false)
 
 const toggleMenuHandler = () => {
-  toggleMenu.value = !toggleMenu.value;
-};
+  toggleMenu.value = !toggleMenu.value
+}
 
 const closeMenu = () => {
-  toggleMenu.value = false;
-};
+  toggleMenu.value = false
+}
 </script>
 
 <template>
@@ -18,10 +18,12 @@ const closeMenu = () => {
     <div class="wrapper-nav">
       <nav class="main-nav">
         <div class="logo">
-          <RouterLink to="/" class="nav-element home-route" @click="closeMenu">simon thuaud</RouterLink>
+          <RouterLink to="/" class="nav-element home-route" @click="closeMenu"
+            >simon thuaud</RouterLink
+          >
         </div>
         <div :class="['router', toggleMenu ? 'open-menu' : 'closed-menu']">
-          <RouterLink to="/about" class="nav-element" @click="closeMenu">à propos</RouterLink> 
+          <RouterLink to="/about" class="nav-element" @click="closeMenu">à propos</RouterLink>
           <RouterLink to="/work" class="nav-element" @click="closeMenu">travaux</RouterLink>
           <RouterLink to="/recipes" class="nav-element" @click="closeMenu">recettes</RouterLink>
         </div>
@@ -39,5 +41,5 @@ const closeMenu = () => {
 </template>
 
 <style scoped>
-@import "./assets/app.css"
+@import './assets/app.css';
 </style>
