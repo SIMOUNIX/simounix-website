@@ -1,7 +1,7 @@
 <!-- card component for project preview -->
 
 <script setup>
-import { defineProps, defineEmits } from 'vue';
+import { defineProps, defineEmits } from 'vue'
 
 const props = defineProps({
   title: String,
@@ -10,13 +10,13 @@ const props = defineProps({
   image: String,
   link: String,
   linkText: String
-});
+})
 
 // emit an event to parent on click
-const emit = defineEmits(['cardClicked']);
+const emit = defineEmits(['cardClicked'])
 
 function handleClick() {
-  emit('cardClicked', props.id);
+  emit('cardClicked', props.id)
 }
 </script>
 
@@ -53,9 +53,9 @@ function handleClick() {
 }
 
 img {
-  width: 30%; 
-  height: 100%; 
-  object-fit: cover; 
+  width: 30%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 0.5rem;
 }
 
@@ -64,7 +64,7 @@ img {
   flex-direction: column;
   justify-content: center;
   padding: 0 1rem;
-  width: 70%; 
+  width: 70%;
 }
 
 h3 {

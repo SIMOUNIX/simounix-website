@@ -1,7 +1,7 @@
 <script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-import SmallCard from '../components/ProjectSmallCard.vue';
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import SmallCard from '../components/ProjectSmallCard.vue'
 
 // const router = useRouter(); // not used yet
 const projects = ref([
@@ -23,10 +23,10 @@ const projects = ref([
     link: 'https://www.epita.fr',
     linkText: 'AI'
   }
-]);
+])
 
 function handleClick(id) {
-    console.log('clicked on', id); 
+  console.log('clicked on', id)
 }
 </script>
 

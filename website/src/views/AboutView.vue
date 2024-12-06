@@ -1,11 +1,18 @@
 <script setup>
-import { downloadData } from '@aws-amplify/storage';
+import { getUrl } from '@aws-amplify/storage'
+import { ref } from 'vue'
 
+const linkToCV = ref('')
 
-const result = await downloadData({
-  path: "docs/THUAUD_Simon_CV.pdf",
-}).result;
+getUrl('docs/THUAUD_Simon_CV.pdf')
+  .then((url) => {
+    linkToCV.value = url
+  })
+  .catch((error) => {
+    console.error('Failed to fetch CV URL:', error)
+  })
 
+console.log('linkToCV:', linkToCV)
 </script>
 
 <template>
@@ -32,7 +39,7 @@ const result = await downloadData({
         <a href="https://www.linkedin.com/in/simon-thuaud/" target="_blank" class="about-text"
           >LinkedIn</a
         >. Pour plus de détails, vous pouvez consulter mon
-        <a href={{ linkToCV }} target="_blank" class="about-text">CV</a>.
+        <a href="{{ linkToCV }}" target="_blank" class="about-text">CV</a>.
       </p>
     </div>
   </div>
