@@ -3,6 +3,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --text: #0d0d0d;
+    --text-secondary: #4a4a4a;
     --background: #f7f8f8;
     --primary: #78a19d;
     --secondary: #a6c9c6;
@@ -12,6 +13,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #f2f2f2;
+    --text-secondary: #b3b3b3;
     --background: #070808;
     --primary: #5e8783;
     --secondary: #365956;
