@@ -1,4 +1,12 @@
-<script setup></script>
+<script setup>
+import { downloadData } from '@aws-amplify/storage';
+
+
+const result = await downloadData({
+  path: "docs/THUAUD_Simon_CV.pdf",
+}).result;
+
+</script>
 
 <template>
   <div class="about">
@@ -24,7 +32,7 @@
         <a href="https://www.linkedin.com/in/simon-thuaud/" target="_blank" class="about-text"
           >LinkedIn</a
         >. Pour plus de détails, vous pouvez consulter mon
-        <a href="../assets/docs/THUAUD_Simon_CV.pdf" target="_blank" class="about-text">CV</a>.
+        <a href={{ linkToCV }} target="_blank" class="about-text">CV</a>.
       </p>
     </div>
   </div>
