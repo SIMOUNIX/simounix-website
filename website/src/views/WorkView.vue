@@ -1,7 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import SmallCard from '../components/ProjectSmallCard.vue'
+
+import '@/assets/views/work.css'
 
 // const router = useRouter(); // not used yet
 const projects = ref([
@@ -22,6 +24,15 @@ const projects = ref([
       "Passionné par l'informatique et les nouvelles technologies, je suis également un grand amateur de cuisine.",
     link: 'https://www.epita.fr',
     linkText: 'AI'
+  },
+  {
+    id: 'ai',
+    image: new URL('../assets/images/simon_gray.png', import.meta.url).href,
+    title: 'Intelligence Artificielle',
+    description:
+      "Passionné par l'informatique et les nouvelles technologies, je suis également un grand amateur de cuisine.",
+    link: 'https://www.epita.fr',
+    linkText: 'AI'
   }
 ])
 
@@ -32,7 +43,7 @@ function handleClick(id) {
 
 <template>
   <div class="work">
-    <div class="work-cards">
+    <div class="cards-container">
       <SmallCard
         v-for="project in projects"
         @cardClicked="handleClick"
@@ -48,6 +59,3 @@ function handleClick(id) {
   </div>
 </template>
 
-<style>
-@import '../assets/views/work.css';
-</style>

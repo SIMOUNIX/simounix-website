@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import '@/assets/views/home.css';
+
+</script>
+
 <template>
   <div class="home">
     <div class="home-image">
@@ -7,5 +12,4 @@
 </template>
 
 <style>
-@import '../assets/views/home.css';
 </style>

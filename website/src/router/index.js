@@ -38,6 +38,14 @@ const router = createRouter({
       }
     },
     {
+      path: '/auth',
+      name: 'auth',
+      component: () => import('../views/AuthView.vue'),
+      meta: {
+        title: 'authentification'
+      }
+    },
+    {
       path: '/:catchAll(.*)', // catch all and redirect to home
       redirect: '/'
     }

@@ -38,7 +38,7 @@ function handleClick() {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 20%;
+  height: 40%;
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -53,7 +53,7 @@ function handleClick() {
 }
 
 img {
-  width: 30%;
+  width: auto;
   height: 100%;
   object-fit: cover;
   border-radius: 0.5rem;
