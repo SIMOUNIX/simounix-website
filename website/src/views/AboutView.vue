@@ -1,18 +1,26 @@
-<script setup>
+<script setup lang="ts">
+import '@/assets/views/about.css';
+import { ref, onMounted } from 'vue'
 import { getUrl } from '@aws-amplify/storage'
-import { ref } from 'vue'
 
-const linkToCV = ref('')
+const linkToCV = ref<string>('');
 
-getUrl('docs/THUAUD_Simon_CV.pdf')
-  .then((url) => {
-    linkToCV.value = url
-  })
-  .catch((error) => {
-    console.error('Failed to fetch CV URL:', error)
-  })
+async function retrieveCV() {
+  await getUrl({
+    path: 'docs/CV_Simon_Thuaud.pdf',
+    options: {
+      bucket: 'bigBucket'
+    }
+  }).then((url) => {
+    linkToCV.value = url.url.toString();
+    console.log(linkToCV.value);
+  });
+}
 
-console.log('linkToCV:', linkToCV)
+onMounted(() => {
+  retrieveCV();
+});
+
 </script>
 
 <template>
@@ -36,15 +44,13 @@ console.log('linkToCV:', linkToCV)
       <p>
         Pour me contacter, vous pouvez m'envoyer un
         <a href="mailto:sim.thuaud@gmail.com" class="about-text">mail</a> ou me retrouver sur
-        <a href="https://www.linkedin.com/in/simon-thuaud/" target="_blank" class="about-text"
-          >LinkedIn</a
-        >. Pour plus de détails, vous pouvez consulter mon
-        <a href="{{ linkToCV }}" target="_blank" class="about-text">CV</a>.
+        <a href="https://www.linkedin.com/in/simon-thuaud/" target="_blank" class="about-text">LinkedIn</a>. 
+        Pour plus de détails, vous pouvez consulter mon
+        <a :href="linkToCV" target="_blank" class="about-text">CV</a>.
       </p>
     </div>
   </div>
 </template>
 
 <style>
-@import '../assets/views/about.css';
 </style>

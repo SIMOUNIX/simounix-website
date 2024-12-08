@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink, RouterView, useRouter } from 'vue-router'
-
 const toggleMenu = ref(false)
 
 const toggleMenuHandler = () => {
