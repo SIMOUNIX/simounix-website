@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import '@/assets/views/home.css';
-
+import '@/assets/views/home.css'
 </script>
 
 <template>
@@ -11,5 +10,4 @@ import '@/assets/views/home.css';
   </div>
 </template>
 
-<style>
-</style>
+<style></style>

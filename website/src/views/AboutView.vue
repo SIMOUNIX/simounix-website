@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import '@/assets/views/about.css';
+import '@/assets/views/about.css'
 import { ref, onMounted } from 'vue'
 import { getUrl } from '@aws-amplify/storage'
 
-const linkToCV = ref<string>('');
+const linkToCV = ref<string>('')
 
 async function retrieveCV() {
   await getUrl({
@@ -12,15 +12,14 @@ async function retrieveCV() {
       bucket: 'bigBucket'
     }
   }).then((url) => {
-    linkToCV.value = url.url.toString();
-    console.log(linkToCV.value);
-  });
+    linkToCV.value = url.url.toString()
+    console.log(linkToCV.value)
+  })
 }
 
 onMounted(() => {
-  retrieveCV();
-});
-
+  retrieveCV()
+})
 </script>
 
 <template>
@@ -44,13 +43,13 @@ onMounted(() => {
       <p>
         Pour me contacter, vous pouvez m'envoyer un
         <a href="mailto:sim.thuaud@gmail.com" class="about-text">mail</a> ou me retrouver sur
-        <a href="https://www.linkedin.com/in/simon-thuaud/" target="_blank" class="about-text">LinkedIn</a>. 
-        Pour plus de détails, vous pouvez consulter mon
+        <a href="https://www.linkedin.com/in/simon-thuaud/" target="_blank" class="about-text"
+          >LinkedIn</a
+        >. Pour plus de détails, vous pouvez consulter mon
         <a :href="linkToCV" target="_blank" class="about-text">CV</a>.
       </p>
     </div>
   </div>
 </template>
 
-<style>
-</style>
+<style></style>

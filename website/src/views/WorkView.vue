@@ -58,4 +58,3 @@ function handleClick(id) {
     </div>
   </div>
 </template>
-
