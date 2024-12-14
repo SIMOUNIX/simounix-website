@@ -7,10 +7,20 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { signIn, getCurrentUser } from 'aws-amplify/auth'
 
+import { createUser } from '@/services/userService'
+
 const username = ref('')
 const password = ref('')
 
 const router = useRouter()
+
+async function createTempUser() {
+  try {
+    await createUser('simounixx@gmail.com', 'simounixx@gmail.com', 'Lea!Simon2022@')
+  } catch (error) {
+    console.error('error creating user', error)
+  }
+}
 
 async function handleSubmit() {
   try {
@@ -37,11 +47,12 @@ document.onkeydown = function (e) {
     handleSubmit()
   }
 }
-
 </script>
 
 <template>
   <div class="auth">
+    <!-- button to create a user  -->
+    <button @click="createTempUser">Create a user</button>
     <div class="auth-form">
       <h1>Login</h1>
       <p>Username</p>
